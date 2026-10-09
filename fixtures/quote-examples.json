@@ -1,0 +1,91 @@
+{
+  "status": "synthetic_test_inputs_not_app_results",
+  "cases": [
+    {
+      "id": "Q01",
+      "qty": 100,
+      "unit_price": "20.00",
+      "unit_cost": "14.00",
+      "discount_pct": "5",
+      "currency": "USD",
+      "fx": "7.80",
+      "payment_days": 30,
+      "expected_net": "1900.00",
+      "expected_hkd": "14820.00",
+      "expected_review": [
+        "amount"
+      ]
+    },
+    {
+      "id": "Q02",
+      "qty": 100,
+      "unit_price": "100.00",
+      "unit_cost": "80.00",
+      "discount_pct": "0",
+      "currency": "HKD",
+      "fx": "1",
+      "payment_days": 30,
+      "expected_net": "10000.00",
+      "expected_hkd": "10000.00",
+      "expected_review": []
+    },
+    {
+      "id": "Q03",
+      "qty": 100,
+      "unit_price": "100.00",
+      "unit_cost": "85.00",
+      "discount_pct": "0",
+      "currency": "HKD",
+      "fx": "1",
+      "payment_days": 30,
+      "expected_net": "10000.00",
+      "expected_hkd": "10000.00",
+      "expected_review": [
+        "margin"
+      ]
+    },
+    {
+      "id": "Q04",
+      "qty": 10,
+      "unit_price": "1000.01",
+      "unit_cost": "800.00",
+      "discount_pct": "0",
+      "currency": "HKD",
+      "fx": "1",
+      "payment_days": 30,
+      "expected_net": "10000.10",
+      "expected_hkd": "10000.10",
+      "expected_review": [
+        "amount"
+      ]
+    },
+    {
+      "id": "Q05",
+      "qty": 10,
+      "unit_price": "100.00",
+      "unit_cost": "50.00",
+      "discount_pct": "0",
+      "currency": "HKD",
+      "fx": "1",
+      "payment_days": 31,
+      "expected_net": "1000.00",
+      "expected_hkd": "1000.00",
+      "expected_review": [
+        "payment"
+      ]
+    },
+    {
+      "id": "Q06",
+      "qty": 3,
+      "unit_price": "0.33",
+      "unit_cost": "0.10",
+      "discount_pct": "5",
+      "currency": "HKD",
+      "fx": "1",
+      "payment_days": 30,
+      "expected_net": "0.94",
+      "expected_hkd": "0.94",
+      "expected_review": []
+    }
+  ]
+}

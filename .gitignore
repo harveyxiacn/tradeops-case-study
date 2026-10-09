@@ -1,0 +1,32 @@
+# Credentials and private local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+# Runtimes, large models, generated data and private media
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+models/
+weights/
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.pth
+artifacts/
+outputs/
+uploads/
+logs/
+private/
+*.db
+*.sqlite*
+dist/
+build/
+.DS_Store
+Thumbs.db
