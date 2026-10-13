@@ -1,37 +1,36 @@
-# 2026-10-13 implementation review
+# TradeOps — Quotation & Approval Case Study
 
-Read the [current implementation, tests and limitations](docs/release-review-20261013.md) first. Older planning and phase notes below are historical, not the current implementation status.
+A synthetic trade-quotation workflow that models the parts of a commercial process that go wrong in practice: versions, approvals, currency and audit. It is a self-contained business-analysis case study with a working backend and minimal UI, not a client delivery.
 
-# TradeOps Case Study
+**Status: implemented and locally verified.** 19/19 tests pass against a local PostgreSQL 16 instance (2026-10-13), and a 6-table / 83-row backup-restore round-trip was verified by SHA-256. Not deployed to production; simulated roles are not real multi-user authentication.
 
-A synthetic trade quotation and approval case study with versioned rules, role checks and acceptance plans.
+## What it demonstrates
 
-**Status: planning scaffold. No runnable application or completed benchmark is claimed.** Created 2026-10-09. Documents describe intended behavior; synthetic fixtures and NOT_RUN templates are not execution evidence.
+- **Versioned quotations** — every quotation is an immutable version; an approval on a stale version is rejected rather than silently overwritten.
+- **Separation of duty** — the requester cannot approve their own quotation; role checks (sales / operations / approver) gate each action, and organisations are isolated.
+- **Money and rules** — amounts use `Decimal`, not floats; currency conversion, discount bounds and a 48-hour validity rule are enforced in SQL and in the service.
+- **Audit and rollback** — every write leaves an audit record inside the same transaction, so a failed audit rolls the whole change back.
+- **Safe export** — approved quotations export to CSV with formula-injection defence.
 
-## 从这里开始
+## Run it
 
-在本项目目录打开新 session，发送：
+```bash
+python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env.local                          # set the local demo dsn
+python run.py                                        # app on http://127.0.0.1:8780
+python -m pytest tests/ -q                           # 19 tests
+```
 
-> 请先读取 AGENTS.md、README.md 和 START_HERE.md，按 START_HERE 的第一阶段执行。保留已有修改，完成适当验证并报告实际结果与未完成项。
+## Evidence
 
-第一阶段：先做 T01–T07：询盘草稿、Decimal 金额计算和提交校验；之后再做审批与报表。
+- [`evidence/test-results.json`](evidence/test-results.json) — per-test results.
+- [`evidence/tradeops-backup-restore.json`](evidence/tradeops-backup-restore.json) — 6-table / 83-row backup-restore verification.
 
-## 文档
+## Honest limitations
 
-- [新 session 启动说明](START_HERE.md)
-- [acceptance](docs/acceptance.md)
-- [architecture](docs/architecture.md)
-- [business-case](docs/business-case.md)
-- [prd](docs/prd.md)
+- No production identity/SSO, schema migrations, connection pooling or deployment monitoring.
+- The demo's role selector is a simulated identity, not multi-user auth; multi-line editing is disabled by design.
+- Uses synthetic data only; the numbers in the UI are not a client's.
 
-## 项目关系
-
-独立业务后端与最小 UI；其他仓库只通过有版本的 HTTP 合同接入，不共享或复制数据库。
-
-## 使用边界
-
-本仓库使用个人实验或虚构业务样本，不代表真实客户交付。模型、第三方组件、素材与运行工具遵循各自许可；本仓库不附带模型权重，不预先授权重新分发第三方材料。
-
-本阶段没有统一启动应用命令，因为尚未开发。实施 session 应补充依赖版本、安装、运行、测试与已知限制，并明确真实后端测试与 mock 测试。
-
-[完整文档索引](docs/index.md)
+See [`docs/release-review-20261013.md`](docs/release-review-20261013.md) for the full review and [`docs/`](docs/index.md) for the design notes.
