@@ -1,0 +1,59 @@
+{
+  "test": "T18 PostgreSQL backup/restore",
+  "passed": true,
+  "source": {
+    "approval_decision": {
+      "count": 5,
+      "sha256": "3c1e5ff8ce2167a30a66d3fd6175bd29af7808da127eef307a30bce3601b7ad0"
+    },
+    "audit_event": {
+      "count": 32,
+      "sha256": "3fba679b083545e9776a66bae1010faec9dca7599284d3b2680e5a3a1c8b714b"
+    },
+    "followup": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inquiry": {
+      "count": 15,
+      "sha256": "b8be882fc847d1fef215bc109ee4b7e78c14b829d5888a75436713b991146c98"
+    },
+    "quote": {
+      "count": 15,
+      "sha256": "26447db8835518c103655fb58c9b3156945eb1c144728ff1afff2d6d3fc7c5f3"
+    },
+    "quote_version": {
+      "count": 16,
+      "sha256": "2df41bacd73f9117372cc1533f723d438475a9c60ede8cf11f9ab0b9e1006c64"
+    }
+  },
+  "restored": {
+    "approval_decision": {
+      "count": 5,
+      "sha256": "3c1e5ff8ce2167a30a66d3fd6175bd29af7808da127eef307a30bce3601b7ad0"
+    },
+    "audit_event": {
+      "count": 32,
+      "sha256": "3fba679b083545e9776a66bae1010faec9dca7599284d3b2680e5a3a1c8b714b"
+    },
+    "followup": {
+      "count": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "inquiry": {
+      "count": 15,
+      "sha256": "b8be882fc847d1fef215bc109ee4b7e78c14b829d5888a75436713b991146c98"
+    },
+    "quote": {
+      "count": 15,
+      "sha256": "26447db8835518c103655fb58c9b3156945eb1c144728ff1afff2d6d3fc7c5f3"
+    },
+    "quote_version": {
+      "count": 16,
+      "sha256": "2df41bacd73f9117372cc1533f723d438475a9c60ede8cf11f9ab0b9e1006c64"
+    }
+  },
+  "restore_database": "tradeops_restore_20261013194731",
+  "scope": "isolated synthetic portfolio database only",
+  "time": "2026-10-13T19:47:32.571319"
+}

@@ -1,3 +1,7 @@
+# 2026-10-13 implementation review
+
+Read the [current implementation, tests and limitations](docs/release-review-20261013.md) first. Older planning and phase notes below are historical, not the current implementation status.
+
 # TradeOps Case Study
 
 A synthetic trade quotation and approval case study with versioned rules, role checks and acceptance plans.

@@ -30,3 +30,7 @@ dist/
 build/
 .DS_Store
 Thumbs.db
+
+.env.local
+__pycache__/
+.runtime/

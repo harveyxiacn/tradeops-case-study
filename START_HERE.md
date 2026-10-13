@@ -1,3 +1,7 @@
+# 2026-10-13 implementation review
+
+Read the [current implementation, tests and limitations](docs/release-review-20261013.md) first. Older planning and phase notes below are historical, not the current implementation status.
+
 # 新 session 启动任务
 
 项目：TradeOps Case Study

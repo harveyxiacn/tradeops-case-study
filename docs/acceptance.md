@@ -1,6 +1,6 @@
 # Acceptance plan
 
-All cases are NOT_RUN. Record commit, environment, actual result, evidence and date.
+These planning cases were executed against the local implementation; results are recorded in [test-results](../evidence/test-results.json) (run 2026-10-13). The table below remains the original acceptance plan.
 
 | ID | 前提与操作 | 预期结果 | 风险 |
 |---|---|---|---|

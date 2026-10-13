@@ -1,113 +1,143 @@
 {
-  "status": "NOT_RUN",
+  "status": "LOCAL_VERIFIED_LIMITED",
+  "date": "2026-10-13",
+  "command": "python -m pytest tests/ -q",
+  "result_line": "19 passed, 1 warning in 2.50s",
+  "scope": "Local synthetic verification on PostgreSQL 16; not a production deployment.",
   "cases": [
     {
-      "id": "T01",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_01_02_incomplete_draft",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Incomplete draft cannot be submitted",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T02",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_03_decimal_example",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Decimal money example and review flags",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T03",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_04_05_boundaries",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Amount and margin boundary review flags",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T04",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_06_invalid_quantity",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Invalid quantities rejected",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T05",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_07_bad_discount_currency",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Bad discount and currency rejected",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T06",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_08_self_approval",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Self-approval is blocked",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T07",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_09_concurrent_decisions",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Concurrent decisions resolve to one winner",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T08",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_10_stale_version",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Stale version cannot be approved",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T09",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_11_optimistic_edit",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Optimistic edit conflict detected",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T10",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_12_org_boundary",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Organisation boundary isolates data",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T11",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_13_audit_failure_rolls_back",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Audit failure rolls the transaction back",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T12",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_14_strict_48h_sql",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Strict 48-hour rule in SQL",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T13",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_15_currency_groups",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Currency grouping in reports",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T14",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_16_17_export_guard_formula",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "CSV export guard and formula injection defence",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T15",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_18_readonly_and_origin",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Read-only role and origin protections",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T16",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_operations_cannot_read_draft",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Operations role cannot read draft quotations",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T17",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_unknown_identity",
+      "suite": "PostgreSQLAcceptance",
+      "status": "PASSED",
+      "description": "Unknown identity rejected",
+      "evidence": "tests/test_trade.py"
     },
     {
-      "id": "T18",
-      "status": "NOT_RUN",
-      "actual": null,
-      "evidence": null
+      "id": "test_nested_non_object_rejected",
+      "suite": "ReviewBounds",
+      "status": "PASSED",
+      "description": "Nested non-object line rejected",
+      "evidence": "tests/test_trade.py"
+    },
+    {
+      "id": "test_extreme_total_rejected_before_database",
+      "suite": "ReviewBounds",
+      "status": "PASSED",
+      "description": "Extreme total rejected before touching the database",
+      "evidence": "tests/test_trade.py"
     }
-  ]
+  ],
+  "note": "19 tests passed against the local PostgreSQL 16 instance on 2026-10-13."
 }
